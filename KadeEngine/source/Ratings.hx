@@ -78,7 +78,7 @@ class Ratings
                     case 14:
                         ranking += " C";
                     case 15:
-                        ranking += " D";
+                        ranking += " BRUH";
                 }
                 break;
             }
