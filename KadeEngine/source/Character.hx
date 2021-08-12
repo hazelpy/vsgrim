@@ -495,6 +495,24 @@ class Character extends FlxSprite
 				addOffset("singDOWN-alt", -30, -27);
 
 				playAnim('idle');
+			case 'grim':
+				// GRIM ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('characters/grim');
+				frames = tex;
+				animation.addByPrefix('idle', 'GrimIdle', 15);
+				animation.addByPrefix('singUP', 'GrimUp', 15, false);
+				animation.addByPrefix('singRIGHT', 'GrimRight', 15, false);
+				animation.addByPrefix('singDOWN', 'GrimDown', 15);
+				animation.addByPrefix('singLEFT', 'GrimLeft', 15, false);
+
+				addOffset('idle', 219, 80);
+				addOffset("singUP", 118, 130);
+				addOffset("singRIGHT", 193, 87);
+				addOffset("singLEFT", 226, 89);
+				addOffset("singDOWN", 185, 102);
+
+				playAnim('idle');
+				setGraphicSize(Std.int(width * 0.8));
 		}
 
 		dance();

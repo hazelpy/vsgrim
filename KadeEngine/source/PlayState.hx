@@ -694,7 +694,7 @@ class PlayState extends MusicBeatState
 						curStage = 'apartment';
 						var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('apartmentBack'));
 						bg.antialiasing = true;
-						bg.scrollFactor.set(0.9, 0.9);
+						bg.scrollFactor.set(1, 1);
 						bg.active = false;
 						add(bg);
 	
@@ -702,7 +702,7 @@ class PlayState extends MusicBeatState
 						stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
 						stageFront.updateHitbox();
 						stageFront.antialiasing = true;
-						stageFront.scrollFactor.set(0.9, 0.9);
+						stageFront.scrollFactor.set(1, 1);
 						stageFront.active = false;
 						add(stageFront);
 	
@@ -783,6 +783,8 @@ class PlayState extends MusicBeatState
 				dad.y += 130;
 			case 'dad':
 				camPos.x += 400;
+			case 'grim':
+				camPos.y += 400;
 			case 'pico':
 				camPos.x += 600;
 				dad.y += 300;
@@ -2063,6 +2065,8 @@ class PlayState extends MusicBeatState
 				{
 					case 'mom':
 						camFollow.y = dad.getMidpoint().y;
+					case 'grim':
+						camFollow.y = dad.getMidpoint().y - 200;
 					case 'senpai':
 						camFollow.y = dad.getMidpoint().y - 430;
 						camFollow.x = dad.getMidpoint().x - 100;
